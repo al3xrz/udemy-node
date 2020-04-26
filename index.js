@@ -18,9 +18,10 @@ app.set('view engine', 'hbs') // регистрация движка
 app.set('views', 'views') // папка с вьюхами
 
 app.use(express.static('public'))
-app.use(homeRoutes)
-app.use(addRoutes)
-app.use(coursesRoutes)
+app.use(express.urlencoded({extended : true}))
+app.use('/', homeRoutes)
+app.use('/add', addRoutes)
+app.use('/courses', coursesRoutes)
 
 
 
