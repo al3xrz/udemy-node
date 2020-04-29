@@ -27,7 +27,7 @@ class Course {
     }
 
     static async getByID(id){
-        const courses = await Courses.getAll()    
+        const courses = await Course.getAll()    
         return new Promise((res, rej) =>{
             res(courses.find( el => el.uuid == id ))
         })
